@@ -1,0 +1,28 @@
+{
+  "name": "npm-navigation-guard",
+  "version": "0.1.0",
+  "description": "navigation guard api for react-native react-navigation",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheNemus/rn-navigation-guard.git"
+  },
+  "keywords": [
+    "react-native",
+    "navigation-guard"
+  ],
+  "author": "Rick Lima",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheNemus/rn-navigation-guard/issues"
+  },
+  "homepage": "https://github.com/TheNemus/rn-navigation-guard#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
