@@ -1,28 +1,52 @@
 {
-  "name": "npm-navigation-guard",
+  "name": "rn-navigation-guard",
   "version": "0.1.0",
   "description": "navigation guard api for react-native react-navigation",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "tsc && node dist/index.js",
-    "lint": "eslint . --ext .ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheNemus/rn-navigation-guard.git"
-  },
-  "keywords": [
-    "react-native",
-    "navigation-guard"
-  ],
+  "repository": "https://github.com/TheNemus/rn-navigation-guard.git",
   "author": "Rick Lima",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TheNemus/rn-navigation-guard/issues"
-  },
-  "homepage": "https://github.com/TheNemus/rn-navigation-guard#readme",
+  "private": false,
   "devDependencies": {
+    "@react-native-community/bob": "^0.17.1",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "@types/react-native": "^0.67.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.67.3",
+    "react-native-screens": "^3.13.1",
     "typescript": "^4.6.2"
-  }
+  },
+  "peerDependencies": {
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.67.3",
+    "react-native-screens": "^3.13.1"
+  },
+  "scripts": {
+    "prepare": "bob build",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+  },
+  "main": "./dist/module/index.js",
+  "module": "./dist/module/index.js",
+  "types": "./dist/typescript/index.d.ts",
+  "react-native": "src/index.ts",
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "module",
+      "typescript"
+    ]
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ]
 }
